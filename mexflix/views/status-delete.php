@@ -1,0 +1,1 @@
+<h2>Eliminado un status</h2>

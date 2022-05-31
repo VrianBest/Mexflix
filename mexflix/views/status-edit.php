@@ -1,0 +1,1 @@
+<h2>Editando un status</h2>
