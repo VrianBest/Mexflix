@@ -35,7 +35,7 @@ abstract class Model {
 	//ejecutar un query simple de tipo inser, update, delete
 	protected function set_query() {
 		$this->db_open();
-		$this->conn->query(this->query);
+		$this->conn->query($this->query);
 		$this->db_close();
 	}
 

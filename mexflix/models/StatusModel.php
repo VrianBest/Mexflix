@@ -1,24 +1,21 @@
-<?php
 
+<?php 
 class StatusModel extends Model {
-
-	public function set( $status_data = array() ) { 
+	public function set( $status_data = array() ) {
 		foreach ($status_data as $key => $value) {
-			//variables variables
 			$$key = $value;
 		}
 
-		$this->query = "REPLACE INTO status (status_id, status) VALUES ($status_id, $status)";
+		$this->query = "REPLACE INTO status (status_id, status) VALUES ($status_id, '$status')";
 		$this->set_query();
 	}
 
-	public function get( $status_id = '' ) { 
+	public function get( $status_id = '' ) {
 		$this->query = ($status_id != '')
 			?"SELECT * FROM status WHERE status_id = $status_id"
 			:"SELECT * FROM status";
-
+		
 		$this->get_query();
-		//var_dump($this->rows);
 
 		$num_rows = count($this->rows);
 
@@ -31,8 +28,8 @@ class StatusModel extends Model {
 		return $data;
 	}
 
-	public function del( $status_id = '' ) { 
-		$this->query = "DELETE FROM status WHERE status_id = $status_id ";
+	public function del( $status_id = '' ) {
+		$this->query = "DELETE FROM status WHERE status_id = $status_id";
 		$this->set_query();
 	}
 

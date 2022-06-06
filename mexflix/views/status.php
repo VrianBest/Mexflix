@@ -3,7 +3,6 @@ print('<h2 class="p1">GESTION DE STATUS </h2>');
 
 $status_controller = new StatusController();
 $status = $status_controller->get();
-var_dump($status);
 
 if( empty($status) ) {
 	print('
