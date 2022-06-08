@@ -28,7 +28,10 @@ class Router {
 					break;
 
 				case 'usuarios':
-					$controller->load_view('users');
+					if( !isset($_POST['r']) ) $controller->load_view('users');
+					else if( $_POST['r'] == 'user-add') $controller->load_view('user-add');
+					else if( $_POST['r'] == 'user-edit') $controller->load_view('user-edit');
+					else if( $_POST['r'] == 'user-delete') $controller->load_view('user-delete');
 					break;
 
 				case 'status':
