@@ -1,6 +1,6 @@
 <?php
 
-class Router {
+class Router { 
 	public $route;
 
 	public function __construct($route){
@@ -24,9 +24,13 @@ class Router {
 					break;
 
 				case 'movieseries':
-					$controller->load_view('movieseries');
+					if( !isset($_POST['r']) ) $controller->load_view('movieseries');
+					else if( $_POST['r'] == 'movieserie-add') $controller->load_view('movieserie-add');
+					else if( $_POST['r'] == 'movieserie-edit') $controller->load_view('movieserie-edit');
+					else if( $_POST['r'] == 'movieserie-delete') $controller->load_view('movieserie-delete');
+					else if( $_POST['r'] == 'movieserie-show') $controller->load_view('movieserie-show');
 					break;
-
+					
 				case 'usuarios':
 					if( !isset($_POST['r']) ) $controller->load_view('users');
 					else if( $_POST['r'] == 'user-add') $controller->load_view('user-add');
